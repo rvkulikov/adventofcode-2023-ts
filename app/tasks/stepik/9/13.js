@@ -1,3 +1,5 @@
+// Задача: https://stepik.org/lesson/1025984/step/13?auth=login&unit=1034244
+
 let teams = [
     {
         "name": "Team A", "players": [{
