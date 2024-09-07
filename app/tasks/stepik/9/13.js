@@ -18,29 +18,27 @@ let teams = [
     }
 ];
 
-
-let result = [];
-for (team of teams) {
-    let erangelDamage = 0;
-    let erangelFrags = 0;
-    let miramarDamage = 0;
-    let miramarFrags = 0;
-    let erangel;
-    let miramar;
-    for (player of team.players) {
-        if (player.zone === 'Erangel') {
-            erangelDamage += player.damage;
-            erangelFrags += player.frags;
-        }
-
-        if (player.zone === 'Miramar') {
-            miramarDamage += player.damage;
-            miramarFrags += player.frags;
-        }
-        erangel = erangelDamage / erangelFrags;
-        miramar = miramarDamage / miramarFrags;
-    }
-    result.push()
-    console.log(erangel, miramar)
-    console.log(123)
+const groupBy = function(arr, key) {
+    return arr.reduce((x, y) => {
+        (x[y[key]] = x[y[key]] || []).push(y);
+        return x;
+    }, {});
 }
+
+
+let res = {};
+teams.forEach((t) => {
+    const groups = groupBy(t.players,'zone');
+
+    res[t.name] = {};
+
+    for (const [zoneName, players] of Object.entries(groups)) {
+        const damage = players.map((p) => p.damage).reduce((a, b) => a + b, 0);
+        const frags = players.map((p) => p.frags).reduce((a, b) => a + b, 0);
+        const dpf = parseFloat((damage / frags).toFixed(2));
+
+        (res[t.name] || {})[zoneName] = dpf;
+    }
+});
+
+console.log(res);

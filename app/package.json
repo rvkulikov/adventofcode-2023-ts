@@ -1,16 +1,15 @@
 {
   "name": "adventofcode-2023-ts",
   "version": "1.0.x-dev",
+  "type": "commonjs",
   "description": "",
   "productName": "",
   "author": "",
   "private": true,
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "core-js": "^3.38.1",
     "csv-parser": "^3.0.0"
-  },
-  "devDependencies": {
   },
   "engines": {
     "node": "^22",
