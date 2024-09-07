@@ -1,7 +1,8 @@
 // Задача: https://stepik.org/lesson/1025984/step/16?auth=login&unit=1034244
 
 let teams = [{
-    "name": "Team A", "players": [
+    "name": "Team A",
+    "players": [
         {"name": "Player 1", "damage": 1500, "frags": 8, "healing": 200, "revives": 22},
         {"name": "Player 2", "damage": 1200, "frags": 5, "healing": 150, "revives": 21},
         {"name": "Player 3", "damage": 1800, "frags": 6, "healing": 100, "revives": 13}]
@@ -37,7 +38,7 @@ function Game(teams) {
 
     // Общий метод для объединения результатов
     this.calculateStats = function () {
-
+        console.log(this.findPlayerWithMaxHealing())
     }
 }
 
