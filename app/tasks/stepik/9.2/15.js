@@ -1,3 +1,5 @@
+// Задача: https://stepik.org/lesson/1025984/step/15?auth=login&unit=1034244
+
 let players = [
     {"name": "Player 1", "frags": 10, "damage": 2000, "timeInZone": 20},
     {"name": "Player 2", "frags": 5, "damage": 1500, "timeInZone": 15},
