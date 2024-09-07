@@ -15,7 +15,7 @@ docker-init: docker-envs
 	docker-compose down --remove-orphans
 	docker-compose up -d
 	sleep 3
-	./node yarn
+	./node -u 0 -- yarn
 
 docker-secrets:
 	test -f ./.env.secrets || cp -n ./.env.vars.secrets ./.env.secrets
